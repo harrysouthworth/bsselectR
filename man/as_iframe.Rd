@@ -18,4 +18,3 @@ as_iframe(widget, file = NULL, height = "500", width = "100\%")
 \description{
 Embed bsselect dropdowns in Rmd documents as iframes
 }
-

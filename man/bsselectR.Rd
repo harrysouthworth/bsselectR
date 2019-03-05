@@ -11,10 +11,9 @@ This R package enables users to display text, images, or iframes from dropdown m
 \note{
 bootstrap-select authors: Silvio Moreto, Ana Carolina, caseyjhol, Matt Bryson, and t0xicCode.
 }
-\author{
-Kyle Walker
-}
 \seealso{
 \url{https://silviomoreto.github.io/bootstrap-select/}
 }
-
+\author{
+Kyle Walker
+}

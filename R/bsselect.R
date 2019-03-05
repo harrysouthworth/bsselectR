@@ -2,10 +2,14 @@
 #'
 #' Function to generate a drop-down menu with the bootstrap-select jQuery plugin in an R Markdown document
 #'
-#' @param vector A named vector of values to send to the bootstrap-select dropdown menu.
-#' @param selected The selected option; if NULL defaults to the first element of \code{vector}.
+#' @param vector A named vector of values to send to the bootstrap-select
+#'   dropdown menu. \emph{Note that} this must be a vector, not a list or
+#'   other object.
+#' @param selected The selected option; if NULL defaults to the first
+#'   element of \code{vector}. Note that \code{selected} should be
+#'   one of the \emph{names} (not values) of \code{vector}.
 #' @param type One of \code{"text"}, \code{"img"}, or \code{"iframe"}.
-#' @param frame_height The height of the image or iframe.  Defaults to 500px.
+#' @param frame_height The height of the image, iframe or html.  Defaults to 500px.
 #' @param frame_width The width of the image or iframe.
 #' @param align_right Whether to align the menu to the right instead of the left.  Defaults to FALSE.
 #' @param dropup_auto Creates a drop-up menu automatically if there is not enough space to drop down.  Defaults to TRUE.
@@ -26,7 +30,7 @@
 #'
 #' @export
 bsselect <- function(vector, selected = NULL,
-                     type = c("text", "img", "iframe"),
+                     type = c("text", "img", "iframe", "html"),
                      frame_height = "500", frame_width = "100%", align_right = FALSE,
                      dropup_auto = TRUE, header = FALSE, live_search = FALSE, box_width = FALSE,
                      live_search_style = "contains", show_tick = FALSE, size = "auto",

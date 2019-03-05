@@ -4,21 +4,23 @@
 \alias{bsselect}
 \title{bsselect}
 \usage{
-bsselect(vector, selected = NULL, type = c("text", "img", "iframe"),
-  frame_height = "500", frame_width = "100\%", align_right = FALSE,
-  dropup_auto = TRUE, header = FALSE, live_search = FALSE,
-  box_width = FALSE, live_search_style = "contains", show_tick = FALSE,
-  size = "auto", style = NULL, width = NULL, height = NULL,
-  elementId = NULL, ...)
+bsselect(vector, selected = NULL, type = c("text", "img", "iframe",
+  "html"), frame_height = "500", frame_width = "100\%",
+  align_right = FALSE, dropup_auto = TRUE, header = FALSE,
+  live_search = FALSE, box_width = FALSE,
+  live_search_style = "contains", show_tick = FALSE, size = "auto",
+  style = NULL, width = NULL, height = NULL, elementId = NULL, ...)
 }
 \arguments{
-\item{vector}{A named vector of values to send to the bootstrap-select dropdown menu.}
+\item{vector}{A named vector of values to send to the bootstrap-select
+dropdown menu. \textit{Note that} this must be a vector, not a list or
+other object.}
 
 \item{selected}{The selected option; if NULL defaults to the first element of \code{vector}.}
 
 \item{type}{One of \code{"text"}, \code{"img"}, or \code{"iframe"}.}
 
-\item{frame_height}{The height of the image or iframe.  Defaults to 500px.}
+\item{frame_height}{The height of the image, iframe or html.  Defaults to 500px.}
 
 \item{frame_width}{The width of the image or iframe.}
 
@@ -52,4 +54,3 @@ Function to generate a drop-down menu with the bootstrap-select jQuery plugin in
 \seealso{
 \url{https://silviomoreto.github.io/bootstrap-select/}
 }
-

@@ -18,7 +18,7 @@ selectOptions <- function(choices, selected = NULL) {
 
 
 #' @import htmltools
-buildHTML <- function(choices, selected = NULL, type = c("text", "img", "iframe"),
+buildHTML <- function(choices, selected = NULL, type = c("text", "img", "iframe", "html"),
                       height = "500", width = "100%", dropdownAlignRight = FALSE,
                       dropupAuto = TRUE, header = FALSE, liveSearch = FALSE, boxWidth = FALSE,
                       liveSearchStyle = c("contains", "startsWith"), showTick = FALSE, size = "auto",
@@ -99,5 +99,20 @@ buildHTML <- function(choices, selected = NULL, type = c("text", "img", "iframe"
                  tags$script(htmlwidgets::JS(js)))
       return(renderTags(out, indent = FALSE))
 
-      }
+    } else if (type == "html") {
+      js <- paste0('$(document).ready(function(){
+                  $("#', id1, '").change(function(){
+                  $("#', id2, '").html($(this).val());
+                  });
+});')
+
+      out <- tags$html(select_tag,
+                       div(HTML(sel), id = id2),
+                       tags$script(htmlwidgets::JS(js)))
+
+      return(renderTags(out, indent = FALSE))
+
+    } else {
+      stop("type should be one of 'text', 'img', 'iframe' or 'html'")
+    }
   }
